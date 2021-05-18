@@ -50,4 +50,10 @@ public class GreetTest {
         assertEquals(greet.greet("Anja", 3), "Привет anja");
 
     }
+    @Test
+    public void bread(){
+        Greet greet=new Greet();
+        greet.greetedUsers();
+
+    }
 }
