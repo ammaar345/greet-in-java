@@ -7,7 +7,7 @@ public class Greet {
     int counter = 0;
 
     public String greet(String name, int language) {
-        String msg = "";
+        String msg;
         String lowerName = name.toLowerCase();
 //        name = name.toLowerCase();
 //        help();
@@ -51,12 +51,11 @@ public class Greet {
 
         ArrayList<String> currentName = new ArrayList<>();
 
-        for (int i = 0; i < names.size(); i++) {
-            if (names.get(i) == lowerName) {//check if correct
+        for (String name : names) {
+            if (name.equals(lowerName)) {
                 currentName.add(lowerName);
             }
         }
-
         return currentName.size();
     }
 
