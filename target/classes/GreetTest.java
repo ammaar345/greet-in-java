@@ -1,5 +1,4 @@
 import greet.Greet;
-
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
