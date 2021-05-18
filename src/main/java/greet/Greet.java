@@ -8,23 +8,24 @@ public class Greet {
 
     public String greet(String name, int language) {
         String msg = "";
-        name = name.toLowerCase();
+        String lowerName=name.toLowerCase();
+//        name = name.toLowerCase();
 //        help();
 //        if (!names.contains(name)) {
         //if name is not inside arrayList , greet user and add to arrayList.
         switch (language) {
 
             case 1:
-                msg = "Hello " + name;
-                names.add(name);
+                msg = "Hello " + lowerName;
+                names.add(lowerName);
                 break;
             case 2:
-                msg = "こんにちは " + name;
-                names.add(name);
+                msg = "こんにちは " + lowerName;
+                names.add(lowerName);
                 break;
             case 3:
-                msg = "Привет " + name;
-                names.add(name);
+                msg = "Привет " + lowerName;
+                names.add(lowerName);
                 break;
 //            case 4:greetedUser();
 //
@@ -35,8 +36,8 @@ public class Greet {
                 exit();
             default:
 
-                msg = "Hey " + name;
-                names.add(name);
+                msg = "Hey " + lowerName;
+                names.add(lowerName);
                 help();
 //            }
         }
@@ -46,10 +47,13 @@ public class Greet {
 
     public int greetedUser(String userName) {
         //method to check amount of times the user selected appears throughout the arrayList.
+       String lowerName=userName.toLowerCase();
+
         ArrayList<String> currentName = new ArrayList<>();
+
         for (int i = 0; i < names.size(); i++) {
-            if (names.contains(userName)) {//check if correct
-                currentName.add(userName);
+            if (names.get(i) == lowerName) {//check if correct
+                currentName.add(lowerName);
             }
         }
 
