@@ -8,7 +8,7 @@ public class Greet {
 
     public String greet(String name, int language) {
         String msg = "";
-        String lowerName=name.toLowerCase();
+        String lowerName = name.toLowerCase();
 //        name = name.toLowerCase();
 //        help();
 //        if (!names.contains(name)) {
@@ -47,7 +47,7 @@ public class Greet {
 
     public int greetedUser(String userName) {
         //method to check amount of times the user selected appears throughout the arrayList.
-       String lowerName=userName.toLowerCase();
+        String lowerName = userName.toLowerCase();
 
         ArrayList<String> currentName = new ArrayList<>();
 
@@ -79,7 +79,6 @@ public class Greet {
         System.out.println("Select 1 to greet in English.");
         System.out.println("Select 2 to greet in Japanese.");
         System.out.println("Select 3 to greet in Russian.");
-
         System.out.println("Select 4 to check how many times a specific user has been greeted.");
         System.out.println("Select 5 to check how many times all users have been greeted.");
         System.out.println("Select 6 to clear all usernames.");
