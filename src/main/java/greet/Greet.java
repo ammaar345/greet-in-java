@@ -23,9 +23,9 @@ public class Greet {
         //if name is not inside arrayList , greet user and add to arrayList.
         int iCount = 0;
         if (!names.contains(lowerName)) {
-//                usersGreeted.put(lowerName, iCount);
+                usersGreeted.put(lowerName, iCount);
 
-        }
+
         switch (language) {
 
             case 1:
@@ -55,6 +55,7 @@ public class Greet {
                 names.add(lowerName);
                 help();
 //            }
+        }
         }
 
         for (String userName : names) {

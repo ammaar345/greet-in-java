@@ -55,7 +55,8 @@ public class GreetTest {
     public void bread() {
         Greet greet = new Greet();
         greet.greet("joe", 2);
-
+        greet.greet("thabo", 3);
+        greet.greet("thabo", 3);
         System.out.println(greet.greetedUsers());
 
     }
