@@ -1,28 +1,47 @@
 package greet;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Greet {
     ArrayList<String> names = new ArrayList<>();
+    HashMap<String, Integer> usersGreeted = new HashMap<String, Integer>();
     int counter;
 
+//    public Boolean checkIfExists(String name) {
+//        if (!names.contains(name)) {
+//            return true;
+//        }
+//        return false;
+//    }
+
+
     public String greet(String name, int language) {
-        String msg;
+        String msg = "";
         String lowerName = name.toLowerCase();
+//        checkIfExists(name);
         //if name is not inside arrayList , greet user and add to arrayList.
+        int iCount = 0;
+        if (!names.contains(lowerName)) {
+//                usersGreeted.put(lowerName, iCount);
+
+        }
         switch (language) {
 
             case 1:
                 msg = "Hello " + lowerName;
                 names.add(lowerName);
+//                usersGreeted.put(name, 1);
                 break;
             case 2:
                 msg = "こんにちは " + lowerName;
                 names.add(lowerName);
+                usersGreeted.put(name, 1);
                 break;
             case 3:
                 msg = "Привет " + lowerName;
                 names.add(lowerName);
+                usersGreeted.put(name, 1);
                 break;
 //            case 4:greetedUser();
 //            case 5:greetedUsers();
@@ -36,6 +55,18 @@ public class Greet {
                 names.add(lowerName);
                 help();
 //            }
+        }
+
+        for (String userName : names) {
+
+
+            if (names.contains(userName)) {
+                int value = usersGreeted.get(name);
+                value++;
+
+                usersGreeted.put(lowerName, value);
+
+            }
         }
         return msg;
 
@@ -55,37 +86,41 @@ public class Greet {
         return currentName.size();
     }
 
-    public void greetedUsers() {
-        int vertexCount = 2;
-        ArrayList<Object> usersGreeted = new ArrayList<>();
-        for (int i = 0; i < vertexCount; i++) {
-        if(){
-
-        }
-
-        }
-
-        System.out.println(usersGreeted);
-
-    }
-        public void exit () {
-            System.exit(0);
-        }
-
-        public void clear () {
-            names.clear();
-            counter = 0;
-        }
-
-        public void help () {
-
-            System.out.println("Select 1 to greet in English.");
-            System.out.println("Select 2 to greet in Japanese.");
-            System.out.println("Select 3 to greet in Russian.");
-            System.out.println("Select 4 to check how many times a specific user has been greeted.");
-            System.out.println("Select 5 to check how many times all users have been greeted.");
-            System.out.println("Select 6 to clear all usernames.");
-            System.out.println("Select 7 to exit.");
-        }
+    public HashMap greetedUsers() {
+//        HashMap<String, Integer> usersGreeted = new HashMap<String, Integer>();
+//        String currentName;
+//        int iCount = 0;
+//        for (String name : names) {
+//            if (name.equals(name)) {
+//                iCount++;
+//            }
+//
+//            currentName = name;
+//
+//        }
+        return usersGreeted;
+//        System.out.println(usersGreeted);
 
     }
+
+    public void exit() {
+        System.exit(0);
+    }
+
+    public void clear() {
+        names.clear();
+        counter = 0;
+    }
+
+    public void help() {
+
+        System.out.println("Select 1 to greet in English.");
+        System.out.println("Select 2 to greet in Japanese.");
+        System.out.println("Select 3 to greet in Russian.");
+        System.out.println("Select 4 to check how many times a specific user has been greeted.");
+        System.out.println("Select 5 to check how many times all users have been greeted.");
+        System.out.println("Select 6 to clear all usernames.");
+        System.out.println("Select 7 to exit.");
+    }
+
+}

@@ -50,10 +50,13 @@ public class GreetTest {
         assertEquals(greet.greet("Anja", 3), "Привет anja");
 
     }
+
     @Test
-    public void bread(){
-        Greet greet=new Greet();
-        greet.greetedUsers();
+    public void bread() {
+        Greet greet = new Greet();
+        greet.greet("joe", 2);
+
+        System.out.println(greet.greetedUsers());
 
     }
 }
