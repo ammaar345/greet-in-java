@@ -6,6 +6,7 @@ import java.util.HashMap;
 public class Greet {
     ArrayList<String> names = new ArrayList<>();
     HashMap<String, Integer> usersGreeted = new HashMap<String, Integer>();
+    int iCount = 0;
     int counter;
 
 //    public Boolean checkIfExists(String name) {
@@ -21,54 +22,61 @@ public class Greet {
         String lowerName = name.toLowerCase();
 //        checkIfExists(name);
         //if name is not inside arrayList , greet user and add to arrayList.
+
+        // for (String user : names) {
         int iCount = 0;
+
         if (!names.contains(lowerName)) {
-                usersGreeted.put(lowerName, iCount);
+            iCount = 1;
+            usersGreeted.put(lowerName, iCount);
 
 
-        switch (language) {
+            switch (language) {
 
-            case 1:
-                msg = "Hello " + lowerName;
-                names.add(lowerName);
+                case 1:
+                    msg = "Hello " + lowerName;
+                    names.add(lowerName);
 //                usersGreeted.put(name, 1);
-                break;
-            case 2:
-                msg = "こんにちは " + lowerName;
-                names.add(lowerName);
-                usersGreeted.put(name, 1);
-                break;
-            case 3:
-                msg = "Привет " + lowerName;
-                names.add(lowerName);
-                usersGreeted.put(name, 1);
-                break;
+                    break;
+                case 2:
+                    msg = "こんにちは " + lowerName;
+                    names.add(lowerName);
+//                    usersGreeted.put(name, iCount);
+                    break;
+                case 3:
+                    msg = "Привет " + lowerName;
+                    names.add(lowerName);
+//                    usersGreeted.put(name, iCount);
+                    break;
 //            case 4:greetedUser();
 //            case 5:greetedUsers();
-            case 6:
-                clear();
-            case 7:
-                exit();
-            default:
+                case 6:
+                    clear();
+                case 7:
+                    exit();
+                default:
 
-                msg = "Hey " + lowerName;
-                names.add(lowerName);
-                help();
+                    msg = "Hey " + lowerName;
+                    names.add(lowerName);
+                    help();
 //            }
-        }
-        }
-
-        for (String userName : names) {
-
-
-            if (names.contains(userName)) {
-                int value = usersGreeted.get(name);
-                value++;
-
-                usersGreeted.put(lowerName, value);
-
             }
         }
+        //}
+//        else {
+
+        for (String userName : names) {
+//            iCount = 0;
+//            iCount=0;
+            if (userName.equals(lowerName)) {
+//                    int value = usersGreeted.get(name);
+                iCount++;
+                usersGreeted.put(lowerName, iCount);
+
+            }
+
+        }
+//        }
         return msg;
 
     }

@@ -54,9 +54,12 @@ public class GreetTest {
     @Test
     public void bread() {
         Greet greet = new Greet();
+        greet.greet("thabo", 3);
+        greet.greet("thabo", 3);
+        greet.greet("dio",1);
         greet.greet("joe", 2);
-        greet.greet("thabo", 3);
-        greet.greet("thabo", 3);
+
+
         System.out.println(greet.greetedUsers());
 
     }
