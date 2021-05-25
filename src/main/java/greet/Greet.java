@@ -1,5 +1,6 @@
 package greet;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -9,12 +10,6 @@ public class Greet {
     int iCount = 0;
     int counter;
 
-//    public Boolean checkIfExists(String name) {
-//        if (!names.contains(name)) {
-//            return true;
-//        }
-//        return false;
-//    }
 
 
     public String greet(String name, int language) {
@@ -24,63 +19,69 @@ public class Greet {
         //if name is not inside arrayList , greet user and add to arrayList.
 
         // for (String user : names) {
-        int iCount = 0;
+//        int iCount = 0;
 
         if (!names.contains(lowerName)) {
             iCount = 1;
-            usersGreeted.put(lowerName, iCount);
 
 
             switch (language) {
 
                 case 1:
-                    msg = "Hello " + lowerName;
-                    names.add(lowerName);
-//                usersGreeted.put(name, 1);
+                    msg = "Hello " + name;
+                    names.add(name);
                     break;
                 case 2:
-                    msg = "こんにちは " + lowerName;
-                    names.add(lowerName);
-//                    usersGreeted.put(name, iCount);
+                    msg = "こんにちは " + name;
+                    names.add(name);
+
                     break;
                 case 3:
-                    msg = "Привет " + lowerName;
-                    names.add(lowerName);
-//                    usersGreeted.put(name, iCount);
+                    msg = "Привет " + name;
+                    names.add(name);
                     break;
-//            case 4:greetedUser();
-//            case 5:greetedUsers();
                 case 6:
                     clear();
                 case 7:
                     exit();
                 default:
 
-                    msg = "Hey " + lowerName;
-                    names.add(lowerName);
+                    msg = "Hey " + name;
+//                    names.add(lowerName);
                     help();
-//            }
+                    break;
+            }
+            usersGreeted.put(lowerName, iCount);
+        } else if (names.contains(lowerName)) {
+            iCount = 0;
+            names.add(name);
+
+            for (String userName : names) {
+                {
+                    iCount++;
+
+                    usersGreeted.put(name, iCount);
+
+                }
+
             }
         }
-        //}
-//        else {
-
-        for (String userName : names) {
-//            iCount = 0;
-//            iCount=0;
-            if (userName.equals(lowerName)) {
-//                    int value = usersGreeted.get(name);
-                iCount++;
-                usersGreeted.put(lowerName, iCount);
-
-            }
-
-        }
-//        }
         return msg;
 
     }
+    public void minusOne(String user) {
+//        int selected;
 
+//        for (String name : names) {
+            iCount = iCount - 1;
+            if (names.contains(user)) {
+//                iCount=iCount-1;
+                usersGreeted.put(user, iCount);
+//if less than 0 , remove from hashmap and array
+
+//            }
+        }
+    }
     public int greetedUser(String userName) {
         //method to check amount of times the user selected appears throughout the arrayList.
         String lowerName = userName.toLowerCase();
@@ -96,20 +97,13 @@ public class Greet {
     }
 
     public HashMap greetedUsers() {
-//        HashMap<String, Integer> usersGreeted = new HashMap<String, Integer>();
-//        String currentName;
-//        int iCount = 0;
-//        for (String name : names) {
-//            if (name.equals(name)) {
-//                iCount++;
-//            }
-//
-//            currentName = name;
-//
-//        }
-        return usersGreeted;
-//        System.out.println(usersGreeted);
 
+        return usersGreeted;
+    }
+
+    public int counter() {
+
+        return usersGreeted.size();
     }
 
     public void exit() {
@@ -118,7 +112,7 @@ public class Greet {
 
     public void clear() {
         names.clear();
-        counter = 0;
+        iCount = 0;
     }
 
     public void help() {
