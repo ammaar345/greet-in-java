@@ -73,14 +73,17 @@ public class Greet {
 //        int selected;
 
 //        for (String name : names) {
-            iCount = iCount - 1;
+
             if (names.contains(user)) {
 //                iCount=iCount-1;
-                usersGreeted.put(user, iCount);
+                iCount = iCount - 1;
+
 //if less than 0 , remove from hashmap and array
 
 //            }
+
         }
+        usersGreeted.put(user, iCount);
     }
     public int greetedUser(String userName) {
         //method to check amount of times the user selected appears throughout the arrayList.

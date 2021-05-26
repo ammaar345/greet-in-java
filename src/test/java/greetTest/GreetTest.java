@@ -152,10 +152,15 @@ public class GreetTest {
         Greet greet = new Greet();
         greet.greet("thabang", 1);
         greet.greet("thabang", 1);
-        greet.greet("thabang", 1);
         greet.minusOne("thabang");
-        greet.minusOne("thabang");
-        greet.minusOne("thabang");
+
+
+
+
+//        greet.greet("thabang", 1);
+//
+//        greet.minusOne("thabang");
+//        greet.minusOne("thabang");
         System.out.println(greet.greetedUsers());
 
     }
