@@ -10,6 +10,7 @@ public class Greet {
     HashMap<String, Integer> usersGreeted = new HashMap<>();
     static int iCount = 0;
     int selected = 0;
+
     String name = "";
 
     Greet(String name, int selected) {
@@ -44,10 +45,13 @@ public class Greet {
                     msg = "Привет " + name;
                     names.add(name);
                     break;
-                case 6:
+                case 4:
                     clear();
+                    msg = "Successfully cleared";
+                    break;
                 case 7:
                     exit();
+                    break;
                 default:
 
                     msg = "Hey " + name;
