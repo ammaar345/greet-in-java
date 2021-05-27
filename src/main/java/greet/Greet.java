@@ -9,7 +9,6 @@ public class Greet {
     ArrayList<String> names = new ArrayList<>();
     HashMap<String, Integer> usersGreeted = new HashMap<>();
     static int iCount = 0;
-    int selected = 0;
 
     String name = "";
 //
@@ -50,8 +49,9 @@ public class Greet {
                     msg = "Successfully cleared";
                     break;
                 case 7:
-                    exit();
-                    break;
+//                    exit();
+//                    break;
+                    msg = "Successfully exited";
                 default:
 
                     msg = "Hey " + name;
@@ -111,9 +111,11 @@ public class Greet {
         return usersGreeted.size();
     }
 
-    public void exit() {
-        System.exit(0);
-    }
+//    public Boolean exit() {
+//        System.exit(0);
+//
+//        return false;
+//    }
 
     public void clear() {
         names.clear();

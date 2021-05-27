@@ -15,10 +15,10 @@ public class Main {
             // Enter username and press Enter
             userName = myObj.nextLine();
             select = myObj.nextInt();
-
-
-
             System.out.println(greet.greet(userName, select));
+            if (select == 7) {
+                break;
+            }
         }
     }
 }
