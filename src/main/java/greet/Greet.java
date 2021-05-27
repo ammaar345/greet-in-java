@@ -12,12 +12,12 @@ public class Greet {
     int selected = 0;
 
     String name = "";
-
-    Greet(String name, int selected) {
-        this.name = name;
-        this.selected = selected;
-
-    }
+//
+//    Greet(String name, int selected) {
+//        this.name = name;
+//        this.selected = selected;
+//
+//    }
 
     public String greet(String name, int language) {
         String msg = "";
