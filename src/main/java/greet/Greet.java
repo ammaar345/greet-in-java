@@ -51,7 +51,9 @@ public class Greet {
                 case 7:
 //                    exit();
 //                    break;
+
                     msg = "Successfully exited";
+                    break;
                 default:
 
                     msg = "Hey " + name;
