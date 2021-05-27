@@ -3,14 +3,20 @@ package greet;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Greet {
     ArrayList<String> names = new ArrayList<>();
-    HashMap<String, Integer> usersGreeted = new HashMap<String, Integer>();
-    int iCount = 0;
-    int counter;
+    HashMap<String, Integer> usersGreeted = new HashMap<>();
+    static int iCount = 0;
+    int selected = 0;
+    String name = "";
 
+    Greet(String name, int selected) {
+        this.name = name;
+        this.selected = selected;
 
+    }
 
     public String greet(String name, int language) {
         String msg = "";
@@ -23,8 +29,6 @@ public class Greet {
 
         if (!names.contains(lowerName)) {
             iCount = 1;
-
-
             switch (language) {
 
                 case 1:
@@ -47,8 +51,6 @@ public class Greet {
                 default:
 
                     msg = "Hey " + name;
-//                    names.add(lowerName);
-                    help();
                     break;
             }
             usersGreeted.put(lowerName, iCount);
@@ -57,34 +59,30 @@ public class Greet {
             names.add(name);
 
             for (String userName : names) {
-                {
-                    iCount++;
+                iCount++;
 
-                    usersGreeted.put(name, iCount);
-
-                }
 
             }
+            usersGreeted.put(name, iCount);
         }
         return msg;
 
     }
+
     public void minusOne(String user) {
-//        int selected;
-
-//        for (String name : names) {
-
-            if (names.contains(user)) {
-//                iCount=iCount-1;
-                iCount = iCount - 1;
-
+        if (names.contains(user)) {
+//            iCount--;
+            usersGreeted.put(user, iCount - 1);
+        }
 //if less than 0 , remove from hashmap and array
-
+        else if (usersGreeted.get(user) < 1) {
+            usersGreeted.remove(user);
+        }
 //            }
 
-        }
-        usersGreeted.put(user, iCount);
+
     }
+
     public int greetedUser(String userName) {
         //method to check amount of times the user selected appears throughout the arrayList.
         String lowerName = userName.toLowerCase();
