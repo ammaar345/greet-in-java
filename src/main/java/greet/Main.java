@@ -20,6 +20,7 @@ public class Main {
 
 
             if (select == 7) {
+                System.out.println("Successfully Exited");
                 break;
             }
             System.out.println(greet.greet(userName, select));

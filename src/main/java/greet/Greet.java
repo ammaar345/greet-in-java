@@ -1,52 +1,46 @@
 package greet;
 
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class Greet {
     //    ArrayList<String> names = new ArrayList<>();
     HashMap<String, Integer> usersGreeted = new HashMap<>();
     int iCount = 0;
 
-    String name = "";
-
     public String greet(String name, int language) {
         String msg = "";
         String lowerName = name.toLowerCase();
         if (!usersGreeted.containsKey(lowerName)) {
             iCount = 1;
-            switch (language) {
-
-                case 1:
-                    msg = "Hello " + name;
-                    usersGreeted.put(lowerName, iCount);
-                    break;
-                case 2:
-                    msg = "こんにちは " + name;
-                    usersGreeted.put(lowerName, iCount);
-                    break;
-                case 3:
-                    msg = "Привет " + name;
-                    usersGreeted.put(lowerName, iCount);
-                    break;
-                case 4:
-                    clear();
-                    msg = "Successfully cleared";
-                    break;
-                case 7:
-                    msg = "Successfully exited";
-                    break;
-                default:
-
-                    msg = "Hey " + name;
-                    usersGreeted.put(lowerName, iCount);
-                    break;
-            }
-//            usersGreeted.put(lowerName, iCount);
+            usersGreeted.put(lowerName, iCount);
+//            switch (language) {
+//
+//                case 1:
+//                    msg = "Hello " + name;
+//                    usersGreeted.put(lowerName, iCount);
+//                    break;
+//                case 2:
+//                    msg = "こんにちは " + name;
+//                    usersGreeted.put(lowerName, iCount);
+//                    break;
+//                case 3:
+//                    msg = "Привет " + name;
+//                    usersGreeted.put(lowerName, iCount);
+//                    break;
+//                case 4:
+//                    clear();
+//                    msg = "Successfully cleared";
+//                    break;
+//                case 7:
+//                    msg = "Successfully exited";
+//                    break;
+//                default:
+//
+//                    msg = "Hey " + name;
+//                    usersGreeted.put(lowerName, iCount);
+//                    break;
+//            }
         } else if (usersGreeted.containsKey(lowerName)) {
-//            iCount = 0;
 
             for (int i = 0; i < usersGreeted.size(); i++) {
                 iCount++;
@@ -54,6 +48,33 @@ public class Greet {
 
             }
 
+        }
+        switch (language) {
+
+            case 1:
+                msg = "Hello " + name;
+//                usersGreeted.put(lowerName, iCount);
+                break;
+            case 2:
+                msg = "こんにちは " + name;
+//                usersGreeted.put(lowerName, iCount);
+                break;
+            case 3:
+                msg = "Привет " + name;
+//                usersGreeted.put(lowerName, iCount);
+                break;
+            case 4:
+                clear();
+                msg = "Successfully cleared";
+                break;
+            case 7:
+                msg = "Successfully exited";
+                break;
+            default:
+
+                msg = "Hey " + name;
+//                usersGreeted.put(lowerName, iCount);
+                break;
         }
         return msg;
 
