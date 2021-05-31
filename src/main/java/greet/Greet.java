@@ -15,12 +15,6 @@ public class Greet {
     public String greet(String name, int language) {
         String msg = "";
         String lowerName = name.toLowerCase();
-//        checkIfExists(name);
-        //if name is not inside arrayList , greet user and add to arrayList.
-
-        // for (String user : names) {
-//        int iCount = 0;
-
         if (!usersGreeted.containsKey(lowerName)) {
             iCount = 1;
             switch (language) {
@@ -32,7 +26,6 @@ public class Greet {
                 case 2:
                     msg = "こんにちは " + name;
                     usersGreeted.put(lowerName, iCount);
-
                     break;
                 case 3:
                     msg = "Привет " + name;
@@ -43,9 +36,6 @@ public class Greet {
                     msg = "Successfully cleared";
                     break;
                 case 7:
-//                    exit();
-//                    break;
-
                     msg = "Successfully exited";
                     break;
                 default:
@@ -76,10 +66,9 @@ public class Greet {
             usersGreeted.put(lowCaseUser, iCount - 1);
         }
 //if less than 0 , remove from hashmap and array
-        else if (usersGreeted.get(user) < 1) {
+        if (usersGreeted.get(user) < 1) {
             usersGreeted.remove(user);
         }
-//            }
 
 
     }
@@ -117,13 +106,13 @@ public class Greet {
 
     public void help() {
 
-        System.out.println("Select 1 to greet in English.");
-        System.out.println("Select 2 to greet in Japanese.");
-        System.out.println("Select 3 to greet in Russian.");
-        System.out.println("Select 4 to check how many times a specific user has been greeted.");
-        System.out.println("Select 5 to check how many times all users have been greeted.");
-        System.out.println("Select 6 to clear all usernames.");
-        System.out.println("Select 7 to exit.");
+        System.out.println("Enter Name and press enter , then Select 1 to greet in English.");
+        System.out.println("Enter Name and press enter  , then Select 2 to greet in Japanese.");
+        System.out.println("Enter Name and press enter , then Select 3 to greet in Russian.");
+        System.out.println("Enter Name and press enter , then Select 4 to check how many times a specific user has been greeted.");
+        System.out.println("Enter Name and press enter , then Select 5 to check how many times all users have been greeted.");
+        System.out.println("Enter Name and press enter , then Select 6 to clear all usernames.");
+        System.out.println("Enter Name and press enter , then Select 7 to exit.");
     }
 
 }

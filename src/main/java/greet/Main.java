@@ -1,8 +1,8 @@
 package greet;
 
 import java.util.Scanner;
-
-import greet.Greet;
+//
+//import greet.Greet;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,15 +10,19 @@ public class Main {
 
         while (true) {
             Scanner myObj = new Scanner(System.in);
-            String userName;
-            Integer select;
+
             // Enter username and press Enter
-            userName = myObj.nextLine();
-            select = myObj.nextInt();
-            System.out.println(greet.greet(userName, select));
+            String userInput = myObj.nextLine();
+            String[] userNameAndCommand = userInput.split(" ", 2);
+            String userName = userNameAndCommand[0];
+            int select = Integer.parseInt(userNameAndCommand[1]);
+//            System.out.println(Bread[0]);
+
+
             if (select == 7) {
                 break;
             }
+            System.out.println(greet.greet(userName, select));
         }
     }
 }
