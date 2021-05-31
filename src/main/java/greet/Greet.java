@@ -6,17 +6,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class Greet {
-    ArrayList<String> names = new ArrayList<>();
+    //    ArrayList<String> names = new ArrayList<>();
     HashMap<String, Integer> usersGreeted = new HashMap<>();
-    static int iCount = 0;
+    int iCount = 0;
 
     String name = "";
-//
-//    Greet(String name, int selected) {
-//        this.name = name;
-//        this.selected = selected;
-//
-//    }
 
     public String greet(String name, int language) {
         String msg = "";
@@ -27,22 +21,22 @@ public class Greet {
         // for (String user : names) {
 //        int iCount = 0;
 
-        if (!names.contains(lowerName)) {
+        if (!usersGreeted.containsKey(lowerName)) {
             iCount = 1;
             switch (language) {
 
                 case 1:
                     msg = "Hello " + name;
-                    names.add(name);
+                    usersGreeted.put(lowerName, iCount);
                     break;
                 case 2:
                     msg = "こんにちは " + name;
-                    names.add(name);
+                    usersGreeted.put(lowerName, iCount);
 
                     break;
                 case 3:
                     msg = "Привет " + name;
-                    names.add(name);
+                    usersGreeted.put(lowerName, iCount);
                     break;
                 case 4:
                     clear();
@@ -57,28 +51,29 @@ public class Greet {
                 default:
 
                     msg = "Hey " + name;
+                    usersGreeted.put(lowerName, iCount);
                     break;
             }
-            usersGreeted.put(lowerName, iCount);
-        } else if (names.contains(lowerName)) {
-            iCount = 0;
-            names.add(name);
+//            usersGreeted.put(lowerName, iCount);
+        } else if (usersGreeted.containsKey(lowerName)) {
+//            iCount = 0;
 
-            for (String userName : names) {
+            for (int i = 0; i < usersGreeted.size(); i++) {
                 iCount++;
-
+                usersGreeted.put(lowerName, iCount);
 
             }
-            usersGreeted.put(name, iCount);
+
         }
         return msg;
 
     }
 
     public void minusOne(String user) {
-        if (names.contains(user)) {
+        String lowCaseUser = user.toLowerCase();
+        if (usersGreeted.containsKey(user)) {
 //            iCount--;
-            usersGreeted.put(user, iCount - 1);
+            usersGreeted.put(lowCaseUser, iCount - 1);
         }
 //if less than 0 , remove from hashmap and array
         else if (usersGreeted.get(user) < 1) {
@@ -92,15 +87,11 @@ public class Greet {
     public int greetedUser(String userName) {
         //method to check amount of times the user selected appears throughout the arrayList.
         String lowerName = userName.toLowerCase();
-
-        ArrayList<String> currentName = new ArrayList<>();
-
-        for (String name : names) {
-            if (name.equals(lowerName)) {
-                currentName.add(lowerName);
-            }
-        }
-        return currentName.size();
+        int userCount = usersGreeted.get(lowerName);
+//        if (usersGreeted.containsKey(lowerName)) {
+//
+//        }
+        return userCount;
     }
 
     public HashMap greetedUsers() {
@@ -120,7 +111,7 @@ public class Greet {
 //    }
 
     public void clear() {
-        names.clear();
+        usersGreeted.clear();
         iCount = 0;
     }
 
