@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Greet greet = new Greet();
-
+        greet.help();
         while (true) {
             Scanner myObj = new Scanner(System.in);
 

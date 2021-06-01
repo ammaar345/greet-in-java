@@ -1,80 +1,69 @@
 package greet;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 
 public class Greet {
+
     //    ArrayList<String> names = new ArrayList<>();
     HashMap<String, Integer> usersGreeted = new HashMap<>();
     int iCount = 0;
 
     public String greet(String name, int language) {
-        String msg = "";
+
         String lowerName = name.toLowerCase();
         if (!usersGreeted.containsKey(lowerName)) {
             iCount = 1;
             usersGreeted.put(lowerName, iCount);
-//            switch (language) {
-//
-//                case 1:
-//                    msg = "Hello " + name;
-//                    usersGreeted.put(lowerName, iCount);
-//                    break;
-//                case 2:
-//                    msg = "こんにちは " + name;
-//                    usersGreeted.put(lowerName, iCount);
-//                    break;
-//                case 3:
-//                    msg = "Привет " + name;
-//                    usersGreeted.put(lowerName, iCount);
-//                    break;
-//                case 4:
-//                    clear();
-//                    msg = "Successfully cleared";
-//                    break;
-//                case 7:
-//                    msg = "Successfully exited";
-//                    break;
-//                default:
-//
-//                    msg = "Hey " + name;
-//                    usersGreeted.put(lowerName, iCount);
-//                    break;
-//            }
-        } else if (usersGreeted.containsKey(lowerName)) {
+        } else if (usersGreeted.containsKey(lowerName) && language <= 3) {
 
             for (int i = 0; i < usersGreeted.size(); i++) {
+
                 iCount++;
                 usersGreeted.put(lowerName, iCount);
 
             }
 
         }
+        String msg = "";
         switch (language) {
 
             case 1:
                 msg = "Hello " + name;
-//                usersGreeted.put(lowerName, iCount);
                 break;
             case 2:
                 msg = "こんにちは " + name;
-//                usersGreeted.put(lowerName, iCount);
                 break;
             case 3:
                 msg = "Привет " + name;
-//                usersGreeted.put(lowerName, iCount);
-                break;
-            case 4:
-                clear();
-                msg = "Successfully cleared";
-                break;
-            case 7:
-                msg = "Successfully exited";
                 break;
             default:
 
                 msg = "Hey " + name;
-//                usersGreeted.put(lowerName, iCount);
                 break;
+            case 4:
+                System.out.println(name + " has been greeted " + greetedUser(name) + " times");
+                break;
+            case 5:
+                ArrayList bread = new ArrayList();
+                for (int i = 0; i < usersGreeted.size(); i++) {
+
+                    bread.add(greetedUsers().keySet().toArray()[i]);
+                    System.out.println(bread.get(i) + " has been greeted " + greetedUsers().get(bread.get(i)) + " time(s)");
+
+                }
+                break;
+            case 6:
+                clear();
+                msg = "Successfully cleared";
+
+                break;
+            case 7:
+                msg = "Successfully exited";
+                break;
+
         }
         return msg;
 
@@ -83,10 +72,8 @@ public class Greet {
     public void minusOne(String user) {
         String lowCaseUser = user.toLowerCase();
         if (usersGreeted.containsKey(user)) {
-//            iCount--;
             usersGreeted.put(lowCaseUser, iCount - 1);
         }
-//if less than 0 , remove from hashmap and array
         if (usersGreeted.get(user) < 1) {
             usersGreeted.remove(user);
         }
@@ -95,13 +82,8 @@ public class Greet {
     }
 
     public int greetedUser(String userName) {
-        //method to check amount of times the user selected appears throughout the arrayList.
         String lowerName = userName.toLowerCase();
-        int userCount = usersGreeted.get(lowerName);
-//        if (usersGreeted.containsKey(lowerName)) {
-//
-//        }
-        return userCount;
+        return usersGreeted.get(lowerName);
     }
 
     public HashMap greetedUsers() {
@@ -114,26 +96,20 @@ public class Greet {
         return usersGreeted.size();
     }
 
-//    public Boolean exit() {
-//        System.exit(0);
-//
-//        return false;
-//    }
-
     public void clear() {
         usersGreeted.clear();
         iCount = 0;
     }
 
     public void help() {
-
-        System.out.println("Enter Name and press enter , then Select 1 to greet in English.");
-        System.out.println("Enter Name and press enter  , then Select 2 to greet in Japanese.");
-        System.out.println("Enter Name and press enter , then Select 3 to greet in Russian.");
-        System.out.println("Enter Name and press enter , then Select 4 to check how many times a specific user has been greeted.");
-        System.out.println("Enter Name and press enter , then Select 5 to check how many times all users have been greeted.");
-        System.out.println("Enter Name and press enter , then Select 6 to clear all usernames.");
-        System.out.println("Enter Name and press enter , then Select 7 to exit.");
+        System.out.println(" Enter name and select an option below : ");
+        System.out.println("1 - Greet in English.");
+        System.out.println("2 - Greet in Japanese ");
+        System.out.println("3 - Greet in Russian.");
+        System.out.println("4 - Check how many times a specific user has been greeted.");
+        System.out.println("5 - Check how many times each user has been greeted");
+        System.out.println("6 - Clear all usernames.");
+        System.out.println("7 - Exit.");
     }
 
 }
