@@ -44,26 +44,26 @@ public class Greet {
 
                 msg = "Hey " + name;
                 break;
-            case 4:
-                System.out.println(name + " has been greeted " + greetedUser(name) + " times");
-                break;
-            case 5:
-                ArrayList bread = new ArrayList();
-                for (int i = 0; i < usersGreeted.size(); i++) {
-
-                    bread.add(greetedUsers().keySet().toArray()[i]);
-                    System.out.println(bread.get(i) + " has been greeted " + greetedUsers().get(bread.get(i)) + " time(s)");
-
-                }
-                break;
-            case 6:
-                clear();
-                msg = "Successfully cleared";
-
-                break;
-            case 7:
-                msg = "Successfully exited";
-                break;
+//            case 4:
+//                System.out.println(name + " has been greeted " + greetedUser(name) + " times");
+//                break;
+//            case 5:
+//                ArrayList bread = new ArrayList();
+//                for (int i = 0; i < usersGreeted.size(); i++) {
+//
+//                    bread.add(greetedUsers().keySet().toArray()[i]);
+//                    System.out.println(bread.get(i) + " has been greeted " + greetedUsers().get(bread.get(i)) + " time(s)");
+//
+//                }
+//                break;
+//            case 6:
+//                clear();
+//                msg = "Successfully cleared";
+//
+//                break;
+//            case 7:
+//                msg = "Successfully exited";
+//                break;
 
         }
         return msg;
