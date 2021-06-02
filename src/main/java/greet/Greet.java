@@ -6,18 +6,18 @@ import java.util.HashMap;
 import java.util.Set;
 
 public class Greet {
-
-    //    ArrayList<String> names = new ArrayList<>();
+    String name = "";
+    int language = 0;
     HashMap<String, Integer> usersGreeted = new HashMap<>();
     int iCount = 0;
 
-    public String greet(String name, int language) {
+    public String greet(/*String name, int language*/) {
 
         String lowerName = name.toLowerCase();
-        if (!usersGreeted.containsKey(lowerName)) {
+        if (!usersGreeted.containsKey(lowerName) && lowerName != "") {
             iCount = 1;
             usersGreeted.put(lowerName, iCount);
-        } else if (usersGreeted.containsKey(lowerName) && language <= 3) {
+        } else if (usersGreeted.containsKey(lowerName) && language <= 3 && lowerName != "") {
 
             for (int i = 0; i < usersGreeted.size(); i++) {
 
@@ -27,6 +27,7 @@ public class Greet {
             }
 
         }
+        // insert if statement for if the language and username is blank
         String msg = "";
         switch (language) {
 
