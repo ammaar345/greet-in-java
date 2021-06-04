@@ -1,9 +1,7 @@
 package greet;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Set;
 
 public class Greet {
     String name = "";
@@ -11,60 +9,74 @@ public class Greet {
     HashMap<String, Integer> usersGreeted = new HashMap<>();
     int iCount = 0;
 
+
     public String greet(/*String name, int language*/) {
-
+        String msg = "";
         String lowerName = name.toLowerCase();
-        if (!usersGreeted.containsKey(lowerName) && lowerName != "") {
-            iCount = 1;
-            usersGreeted.put(lowerName, iCount);
-        } else if (usersGreeted.containsKey(lowerName) && language <= 3 && lowerName != "") {
-
-            for (int i = 0; i < usersGreeted.size(); i++) {
-
-                iCount++;
+        if (name.length() > 1) {
+            if (!usersGreeted.containsKey(lowerName)) {
+                iCount = 1;
                 usersGreeted.put(lowerName, iCount);
+            } else if (usersGreeted.containsKey(lowerName) && language <= 3 /*&& lowerName != ""*/) {
+
+                for (int i = 0; i < usersGreeted.size(); i++) {
+
+                    iCount++;
+                    usersGreeted.put(lowerName, iCount);
+
+                }
 
             }
+            // insert if statement for if the language and username is blank
 
-        }
-        // insert if statement for if the language and username is blank
-        String msg = "";
-        switch (language) {
+            switch (language) {
 
-            case 1:
-                msg = "Hello " + name;
-                break;
-            case 2:
-                msg = "こんにちは " + name;
-                break;
-            case 3:
-                msg = "Привет " + name;
-                break;
-            default:
+                case 1:
+                    msg = "Hello " + name;
+                    break;
+                case 2:
+                    msg = "こんにちは " + name;
+                    break;
+                case 3:
+                    msg = "Привет " + name;
+                    break;
+                case 4:
+                    System.out.println(name + " has been greeted " + greetedUser(name) + " times");
+                    break;
+                case 5:
+                    minusOne(lowerName);
+                default:
 
-                msg = "Hey " + name;
-                break;
-//            case 4:
-//                System.out.println(name + " has been greeted " + greetedUser(name) + " times");
-//                break;
-//            case 5:
-//                ArrayList bread = new ArrayList();
-//                for (int i = 0; i < usersGreeted.size(); i++) {
-//
-//                    bread.add(greetedUsers().keySet().toArray()[i]);
-//                    System.out.println(bread.get(i) + " has been greeted " + greetedUsers().get(bread.get(i)) + " time(s)");
-//
-//                }
-//                break;
-//            case 6:
-//                clear();
-//                msg = "Successfully cleared";
-//
-//                break;
-//            case 7:
-//                msg = "Successfully exited";
-//                break;
+                    msg = "Hey " + name;
+                    break;
+            }
 
+
+        } else if (lowerName.length() == 1) {
+            switch (language) {
+
+                case 6:
+                    ArrayList <Object >names = new ArrayList<>();
+                    for (int i = 0; i < usersGreeted.size(); i++) {
+
+                        names.add(greetedUsers().keySet().toArray()[i]);
+                        System.out.println(names.get(i) + " has been greeted " + greetedUsers().get(names.get(i)) + " time(s)");
+
+                    }
+                    break;
+                case 7:
+                    clear();
+                    msg = "Successfully cleared";
+
+                    break;
+                case 8:
+                    msg = "Successfully exited";
+                    break;
+                default:
+
+                    msg = "Hey " + name;
+                    break;
+            }
         }
         return msg;
 
