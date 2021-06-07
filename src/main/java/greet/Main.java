@@ -63,8 +63,10 @@ public class Main {
             }
             if (command.equals("greeteduser")) {
                 String userName = userNameAndCommand[1].toLowerCase();
-                greet.greetedUser(userName);
+                System.out.println(userName + " has been greeted " + greet.greetedUser(userName) + " times");
             }
+//            else {
+//                String userName = userNameAndCommand[1].toLowerCase();
 //                System.out.println("Hey" + userName);
 //            }
             switch (command) {
@@ -85,26 +87,14 @@ public class Main {
                     msg = "Successfully cleared";
                     System.out.println(msg);
                     break;
-                case "exit":
-                    msg = "Successfully exited";
-                    System.out.println(msg);
-                    break;
-//                default:
-//
-//                    msg = "Hey " + userName;
-//                    System.out.println(msg);
-//                    break;
-
             }
 
-//            if (command.equals("exit")) {
-//                System.out.println("Successfully Exited");
-//                break;
-//            }
-//            System.out.println();
-        }
-//            System.out.println(Bread[0]);
+            if (command.equals("exit")) {
+                System.out.println("Successfully Exited");
+                break;
+            }
 
+        }
 
     }
 }
