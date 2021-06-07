@@ -1,84 +1,35 @@
 package greet;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Greet {
     String name = "";
-    int language = 0;
+    String language = "";
     HashMap<String, Integer> usersGreeted = new HashMap<>();
     int iCount = 0;
 
 
-    public String greet(/*String name, int language*/) {
-        String msg = "";
+    public  void greet(String name) {
+
         String lowerName = name.toLowerCase();
-        if (name.length() > 1) {
-            if (!usersGreeted.containsKey(lowerName)) {
-                iCount = 1;
+
+        if (!usersGreeted.containsKey(lowerName)) {
+            iCount = 1;
+            usersGreeted.put(lowerName, iCount);
+        } else if (usersGreeted.containsKey(lowerName)) {
+
+            for (int i = 0; i < usersGreeted.size(); i++) {
+
+                iCount++;
                 usersGreeted.put(lowerName, iCount);
-            } else if (usersGreeted.containsKey(lowerName) && language <= 3 /*&& lowerName != ""*/) {
-
-                for (int i = 0; i < usersGreeted.size(); i++) {
-
-                    iCount++;
-                    usersGreeted.put(lowerName, iCount);
-
-                }
 
             }
-            // insert if statement for if the language and username is blank
 
-            switch (language) {
-
-                case 1:
-                    msg = "Hello " + name;
-                    break;
-                case 2:
-                    msg = "こんにちは " + name;
-                    break;
-                case 3:
-                    msg = "Привет " + name;
-                    break;
-                case 4:
-                    System.out.println(name + " has been greeted " + greetedUser(name) + " times");
-                    break;
-                case 5:
-                    minusOne(lowerName);
-                default:
-
-                    msg = "Hey " + name;
-                    break;
-            }
-
-
-        } else if (lowerName.length() == 1) {
-            switch (language) {
-
-                case 6:
-                    ArrayList <Object >names = new ArrayList<>();
-                    for (int i = 0; i < usersGreeted.size(); i++) {
-
-                        names.add(greetedUsers().keySet().toArray()[i]);
-                        System.out.println(names.get(i) + " has been greeted " + greetedUsers().get(names.get(i)) + " time(s)");
-
-                    }
-                    break;
-                case 7:
-                    clear();
-                    msg = "Successfully cleared";
-
-                    break;
-                case 8:
-                    msg = "Successfully exited";
-                    break;
-                default:
-
-                    msg = "Hey " + name;
-                    break;
-            }
         }
-        return msg;
+        // insert if statement for if the language and username is blank
+
+
+
 
     }
 
