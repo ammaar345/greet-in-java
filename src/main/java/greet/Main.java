@@ -41,17 +41,17 @@ public class Main {
                 System.out.println(msg);
 
             }
-            if (command.equals("greeted")) {
+            if (userInput.equals("greeted")) {
                 System.out.println(userName + " has been greeted " + greet.greetedUser(userName) + " times");
             }
-            if (command.equals("remove")) {
+            if (userInput.equals("remove"+)) {
                 greet.minusOne(userName.toLowerCase());
                 System.out.println("Removed one count from selected user");
             }
 
 //                System.out.println("Hey" + userName);
 //            }
-            switch (command) {
+            switch (userInput) {
 
                 case "greeted":
                     ArrayList<Object> names = new ArrayList<>();
