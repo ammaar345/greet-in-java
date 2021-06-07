@@ -21,40 +21,58 @@ public class Main {
             String[] userNameAndCommand = userInput.split(" ");
 
             String command = (userNameAndCommand[0]);
-            String userName = userNameAndCommand[1].toLowerCase();
-            String language = userNameAndCommand[2].toLowerCase();
-            if (command.equals("greet") && language.equalsIgnoreCase("english")) {
-                greet.greet(userName);
-                msg = "Hello " + userName;
-                System.out.println(msg);
+
+
+            if (command.equals("greet")) {
+                String userName = userNameAndCommand[1].toLowerCase();
+                String language = userNameAndCommand[2].toLowerCase();
+                if (language.equalsIgnoreCase("english")) {
+                    greet.greet(userName);
+                    msg = "Hello " + userName;
+                    System.out.println(msg);
+                }
 
             }
-            if (command.equals("greet") && language.equalsIgnoreCase("japanese")) {
-                greet.greet(userName);
-                msg = "こんにちは " + userName;
-                System.out.println(msg);
+            if (command.equals("greet")) {
+                String userName = userNameAndCommand[1].toLowerCase();
+                String language = userNameAndCommand[2].toLowerCase();
+                if (language.equalsIgnoreCase("japanese")) {
+                    greet.greet(userName);
+                    msg = "こんにちは " + userName;
+                    System.out.println(msg);
+                }
+            }
+            if (command.equals("greet")) {
+                String userName = userNameAndCommand[1].toLowerCase();
+                String language = userNameAndCommand[2].toLowerCase();
 
+                if (language.equalsIgnoreCase("russian")) {
+                    greet.greet(userName);
+                    msg = "Привет " + userName;
+                    System.out.println(msg);
+                }
             }
-            if (command.equals("greet") && language.equalsIgnoreCase("russian")) {
-                greet.greet(userName);
-                msg = "Привет " + userName;
-                System.out.println(msg);
+//            if (command.equals("greeted")) {
+//                System.out.println(userName + " has been greeted " + greet.greetedUser(userName) + " times");
+//            }
+            if (command.equals("remove")) {
 
-            }
-            if (userInput.equals("greeted")) {
-                System.out.println(userName + " has been greeted " + greet.greetedUser(userName) + " times");
-            }
-            if (userInput.equals("remove"+)) {
+                String userName = userNameAndCommand[1].toLowerCase();
                 greet.minusOne(userName.toLowerCase());
                 System.out.println("Removed one count from selected user");
             }
-
+            if (command.equals("greeteduser")) {
+                String userName = userNameAndCommand[1].toLowerCase();
+                greet.greetedUser(userName);
+            }
 //                System.out.println("Hey" + userName);
 //            }
-            switch (userInput) {
+            switch (command) {
 
                 case "greeted":
+
                     ArrayList<Object> names = new ArrayList<>();
+
                     for (int i = 0; i < greet.usersGreeted.size(); i++) {
 
                         names.add(greet.greetedUsers().keySet().toArray()[i]);
